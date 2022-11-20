@@ -26,14 +26,9 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#" th:href="@{/autenticar}">Autenticarse</a>
-                                <a class="navbar-brand" href="#" th:href="@{/registroCliente}">Registrar Cliente</a>
-			</div>
-			<div id="navbar" class="collapse navbar-collapse">
-				<ul class="nav navbar-nav">
-					<li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Cerrar
-							sesión</a></li>
-				</ul>
+				<a class="navbar-brand" href="#" th:href="@{/registroProductoEmpeno}">Registro Prod. Empeño</a>
+				<a class="navbar-brand" href="#" th:href="@{/registroCliente}">Registrar Cliente</a>
+				<a class="navbar-brand" href="#" th:href="@{/registroProductoVenta}">Registrar Prod. Venta</a>
 			</div>
 		</div>
 	</nav>

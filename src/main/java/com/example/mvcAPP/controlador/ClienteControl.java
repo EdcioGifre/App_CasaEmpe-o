@@ -3,14 +3,11 @@ package com.example.mvcAPP.controlador;
 import com.example.mvcAPP.modelo.Cliente;
 import com.example.mvcAPP.servicio.ClienteServicio;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.List;
 
 @Controller
 @RequestMapping("/registroCliente")

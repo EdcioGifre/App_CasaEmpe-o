@@ -4,9 +4,6 @@ import com.example.mvcAPP.modelo.Cliente;
 import com.example.mvcAPP.repositorio.RepositorioCliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
@@ -14,8 +11,6 @@ import java.util.Optional;
 @Service
 public class ClienteServicio {
 
-    @PersistenceContext
-    private EntityManager entityManager;
     @Autowired
     private RepositorioCliente repositorioCliente;
 
