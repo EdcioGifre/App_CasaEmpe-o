@@ -19,34 +19,21 @@ public class ClienteControl {
     @Autowired
     ClienteServicio clienteServicio;
 
-    @PostMapping
-    private String addCliente (@ModelAttribute("cliente") Cliente cliente){
-        if(clienteServicio.createCliente(cliente)){
-            //clienteServicio.createCliente(cliente);
-            System.out.println(cliente);
-            return "redirect:/registroCliente?exito";
-        }
-        return "redirect:/registroCliente?error";
-    }
-
     @ModelAttribute("cliente")
     public Cliente guardarCliente() {
         return new Cliente();
+    }
+
+    @PostMapping
+    private String addCliente (@ModelAttribute("cliente") Cliente cliente){
+        if(clienteServicio.createCliente(cliente)){
+            return "redirect:/registroCliente?exito";
+        }
+        return "redirect:/registroCliente?error";
     }
 
     @GetMapping
     public String mostrarFormularioDeRegistro() {
         return "registroCliente";
     }
-
-    /*@PostMapping
-    public String verListaClientes(Model modelo) {
-        System.out.println("Modelo ");
-        System.out.println(modelo.getAttribute("username"));
-
-        List<Cliente> clientes = clienteServicio.allClientes();
-        modelo.addAttribute("clientes", clientes);
-        //modelo.addAttribute("estudiantes", clienteServicio.allClientes());
-        return "listaClientes";
-    }*/
 }
