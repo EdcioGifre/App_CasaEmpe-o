@@ -44,6 +44,7 @@
             <th>Codigo</th>
             <th>Nombre</th>
             <th>Precio</th>
+            <th>Eliminar</th>
         </tr>
         </thead>
         <tbody>
@@ -51,6 +52,10 @@
             <td th:text="${dato.codigo}">ID</td>
             <td th:text="${dato.nombre}">ID</td>
             <td th:text="${dato.precio}">ID</td>
+            <td>
+                <!--<a th:href="@{/listaClientes/modificarCliente/{cedula}(cedula=${dato.cedula})}" class="btn btn-info">Modificar</a>-->
+                <a th:href="@{/listaProductosVenta/{codigo}(codigo=${dato.codigo})}" class="btn btn-danger">Eliminar</a>
+            </td>
         </tr>
         </tbody>
     </table>

@@ -29,7 +29,7 @@ public class ProductoEmpenoControl {
         return "redirect:/registroProductoEmpeno?error";
     }
 
-    @GetMapping
+    @GetMapping///("/registroProductoEmpeno")
     public String mostrarFormularioDeRegistro() {
         return "registroProductoEmpeno";
     }

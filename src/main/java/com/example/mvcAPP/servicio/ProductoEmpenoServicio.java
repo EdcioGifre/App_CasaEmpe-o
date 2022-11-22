@@ -46,7 +46,7 @@ public class ProductoEmpenoServicio {
     }
 
     ///buscar productosEmpeno por codigo
-    public Optional<ProductoEmpeno> findByIdProductoEmpeno (int codigo) {
-        return repositorioProdEmpeno.findById(codigo);
+    public ProductoEmpeno findByIdProductoEmpeno (int codigo) {
+        return repositorioProdEmpeno.findById(codigo).get();
     }
 }

@@ -46,6 +46,7 @@
             <th>Fecha Final de Empeño</th>
             <th>Nombre</th>
             <th>Precio</th>
+            <th>Eliminar</th>
         </tr>
         </thead>
         <tbody>
@@ -55,6 +56,10 @@
             <td th:text="${dato.fechaFinalEmpen}">ID</td>
             <td th:text="${dato.nombre}">ID</td>
             <td th:text="${dato.precio}">ID</td>
+            <td>
+                <!--<a th:href="@{/listaClientes/modificarCliente/{cedula}(cedula=${dato.cedula})}" class="btn btn-info">Modificar</a>-->
+                <a th:href="@{/listaProductosEmpeno/{codigo}(codigo=${dato.codigo})}" class="btn btn-danger">Eliminar</a>
+            </td>
         </tr>
         </tbody>
     </table>

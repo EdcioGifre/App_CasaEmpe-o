@@ -16,7 +16,7 @@ public class ClienteServicio {
 
     ///crear cliente
     @Transactional
-    public boolean createCliente (Cliente cliente) {
+    public boolean createCliente (Cliente cliente)  {
         try {
             if(!repositorioCliente.existsById(cliente.getCedula())){
                 repositorioCliente.save(cliente);
@@ -40,13 +40,35 @@ public class ClienteServicio {
         }
     }
 
+    ////////////////////////nuevo////////////////////
+    ///guardar cliente
+    @Transactional
+    public boolean modifyCliente(Cliente cliente){
+        try {
+            if(!repositorioCliente.existsById(cliente.getCedula())){
+                return false;
+            }else {
+                repositorioCliente.save(cliente);
+                return true;
+
+            }
+        }catch (Exception e){
+            throw e;
+        }
+    }
+
+    /*@Transactional
+    public Cliente modifyCliente(Cliente cliente){
+        return repositorioCliente.save(cliente);
+    }*/
+
     ///listar todos los clientes
     public List<Cliente> allClientes (){
         return repositorioCliente.findAll();
     }
 
     ///buscar cliente por cedula
-    public Optional<Cliente> findByIdCliente (Long id) {
-        return repositorioCliente.findById(id);
+    public Cliente findByIdCliente (Long id) {
+        return repositorioCliente.findById(id).get();
     }
 }
