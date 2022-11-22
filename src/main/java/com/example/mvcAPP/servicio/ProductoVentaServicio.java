@@ -46,7 +46,7 @@ public class ProductoVentaServicio {
     }
 
     ///buscar cliente por cedula
-    public Optional<ProductoVenta> findByIdProductoVenta (int codigo) {
-        return repositorioProdVenta.findById(codigo);
+    public ProductoVenta findByIdProductoVenta (int codigo) {
+        return repositorioProdVenta.findById(codigo).get();
     }
 }
